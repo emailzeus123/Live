@@ -29,10 +29,7 @@ class login extends CI_Controller {
         $this->user->password = filter_input(INPUT_POST, 'password');
 
         if ($this->user->check_user() == 1) {
-            $this->load->view('header');
-            $this->load->view('navigation');
-            //$this->load->view('main_view', $data);
-            $this->load->view('footer');
+            
         }else{
             
             $this->load->view('login_view',$data);
