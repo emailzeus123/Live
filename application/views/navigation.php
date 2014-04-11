@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-inverse" role="navigation">
     <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
             <span class="sr-only">Navigation toggle</span>
@@ -11,8 +11,8 @@
     <div class="navbar-collapse collapse">
         <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
-            <li><a href="#">Google</a></li>
-            <li><a href="#">Facebook</a></li>
+            <li><a href="https://www.google.com/">Google</a></li>
+            <li><a href="https://www.facebook.com/">Facebook</a></li>
             <li><a href="#">Other</a></li>
         </ul>
     </div>

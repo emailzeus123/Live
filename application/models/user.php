@@ -7,8 +7,8 @@ class User extends CI_Model{
     public function check_user(){
         $result = $this->db->get_where('user',array('username'=>$this->email,'password'=>$this->password));
         if(count($result->result()) == 1 ){
-            return 'true';
+            return 1;
         }
-        return 'false';
+        
     }
 }

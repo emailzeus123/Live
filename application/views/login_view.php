@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap 101 Template</title>
+    <title>CMS</title>
 
     <!-- Bootstrap -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -17,16 +17,10 @@
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
   </head>
-  <body>
-      <div class="container">
-          <div class="row">
-              <div class="well">testing 3</div>
-          </div>             
-      </div>  
-    
- <!--   
+  <body>   
+   
     <div class="container">
-        <form class="form-signin" role="form" method="post" action="login/check_login">
+        <form class="form-signin" role="form" method="post" action="<?php echo $path ?>">
             <h2 class="form-signin-heading">Please sign in</h2>
             <input name="email" type="email" class="form-control" placeholder="Email Address" required="autofocus">
             <input name="password" type="password" class="form-control" placeholder="Password" required>
@@ -34,8 +28,7 @@
             <button class="btn btn-lg btn-primary btn-block" type="submit">Sign In</button>
         </form>
     </div>
- -->
- <!-- End of Container -->
+<!-- End of Container -->
     
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
