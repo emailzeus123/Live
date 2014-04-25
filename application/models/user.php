@@ -4,6 +4,7 @@ class User extends CI_Model{
     
     public function create_user($data){
         $this->db->insert('user',$data);
+        return $this->db->insert_id();
     }
     
     public function login($username,$password,$user_type){

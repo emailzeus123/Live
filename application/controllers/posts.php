@@ -19,14 +19,15 @@ class Posts extends CI_Controller {
     }
 
     public function index($start = 0) {
+        $num = 2;
         $this->load->library('pagination');
         $config['base_url'] = base_url() . 'index.php/posts/index';
         $config['total_rows'] = $this->post->get_page_count();
-        $config['per_page'] = 1;
+        $config['per_page'] = $num; 
         $this->pagination->initialize($config);
 
         $data['pages'] = $this->pagination->create_links();
-        $data['posts'] = $this->post->get_posts(1, $start);
+        $data['posts'] = $this->post->get_posts($num, $start);
         $this->load->view('post_index', $data);
     }
 
@@ -79,10 +80,11 @@ class Posts extends CI_Controller {
         if (!$this->correct_permission('author')) {
             redirect(base_url() . 'index.php/users/login');
         }
-        $data['postID'] = $_GET['postID'];
-        $data['title'] = $_GET['title'];
+        $data['postID'] = filter_input(INPUT_GET,'postID');
+        $data['title'] = filter_input(INPUT_GET,'title');
         $data['post'] = filter_input(INPUT_GET, 'post');
         $data['active'] = 1;
+        //echo filter_input(INPUT_GET, 'post');
         $this->load->view('edit_post', $data);
     }
 

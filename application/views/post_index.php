@@ -6,6 +6,7 @@ if ($this->session->userdata('userID')) {
     <p>User Type: <?= $this->session->userdata('user_type'); ?></p>
     <p><a href="<?= base_url() ?>index.php/users/logout">Logout</a></p>
     <p><a href="<?= base_url() ?>index.php/posts/new_post">New Post</a></p>
+    <p><a href="<?= base_url() ?>index.php/users/register">Register User</a></p>
     <?php
 } else {
     ?>    
@@ -18,9 +19,9 @@ foreach ($posts as $post) {
 
     echo "<h3>" . $post['title'];
     ?>
-    - <a href="index.php/posts/edit_post?postID=<?php echo $post['postID'] ?>&title=<?php echo $post['title'] ?>
+    - <a href="<?= base_url('index.php/posts/edit_post') ?>?postID=<?php echo $post['postID'] ?>&title=<?php echo $post['title'] ?>
          &post=<?php echo $post['post'] ?>">Edit</a> | 
-    <a href="index.php/posts/delete_post?postID=<?php echo $post['postID'] ?>">Delete</a>
+    <a href="<?= base_url('index.php/posts/delete_post') ?>?postID=<?php echo $post['postID'] ?>">Delete</a>
     <?php
     echo "</h3>";
     echo $post['post'] . '<br>';
