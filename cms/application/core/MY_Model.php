@@ -17,7 +17,7 @@ class MY_Model extends CI_Model {
     protected $_primary_key = 'id';
     protected $_primary_filter = 'intval';
     protected $_order_by = '';
-    protected $_rules = array();
+    public $rules = array();
     protected $_timesstamps = FALSE;
 
     public function __construct() {
@@ -46,12 +46,38 @@ class MY_Model extends CI_Model {
         return $this->get(NULL, $single);
     }
 
-    public function save() {
+    public function save($data, $id = NULL) {
+        if($this->_timesstamps == TRUE){
+            $now = data('Y-m-d H:i:s');
+            $id || $data['created'] = $now;
+            $data['modified'] = $now;           
+        }
         
+        if($id === NULL){
+            !isset($data[$this->_primary_key]) || $data[$this->_primary_key] = NULL;
+            $this->db->set($data);
+            $this->db->insert($this->_table_name);
+            $id = $this->db->insert_id();           
+        }else{
+            $filter = $this->_primary_filter;
+            $id = $filter($id);
+            $this->db->set($data);
+            $this->db->where($this->_primary_key, $id);
+            $this->db->update($this->_table_name);
+        }
+        return $id;
     }
 
-    public function delete() {
+    public function delete($id) {
+        $filter = $this->_primary_filter;
+        $id = $filter($id);
         
+        if(!$id){
+            return FALSE;
+        }
+        $this->db->where($this->_primary_key, $id);
+        $this->db->limit(1);
+        $this->db->delete($this->_table_name);
     }
 
 };

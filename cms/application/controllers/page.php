@@ -20,4 +20,15 @@ class Page extends Frontend_Controller {
     public function index(){
         var_dump($this->page_m->get_by(array('slug'=>'about')));
     }
+    
+    public function save(){
+        $data = array(
+           'order'=> '1'
+        );
+        $id = $this->page_m->save($data, 1);
+        var_dump($id);
+    }
+    public function delete(){
+        $this->page_m->delete(5);
+    }
 }

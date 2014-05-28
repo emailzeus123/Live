@@ -1,4 +1,7 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+
+
 /*
 | -------------------------------------------------------------------
 | AUTO-LOADER
@@ -51,8 +54,10 @@ $autoload['packages'] = array();
 |
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
+//$autoload['core'] = array('CI_Controller','MY_Controller');
 
 $autoload['libraries'] = array('database','session');
+
 
 
 /*
@@ -80,7 +85,7 @@ $autoload['helper'] = array('form','url');
 |
 */
 
-$autoload['config'] = array();
+$autoload['config'] = array('cms_config');
 
 
 /*
