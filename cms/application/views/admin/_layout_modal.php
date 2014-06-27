@@ -1,5 +1,5 @@
 <?php $this->load->view('admin/components/page_head'); ?>
-    <body style="background: #555">
+    <body style="background: #ddd">
         <div class="modal show" role="dialog">
           
             <?php $this->load->view($subview); ?>

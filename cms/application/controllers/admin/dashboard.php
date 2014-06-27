@@ -16,7 +16,8 @@ class Dashboard extends Admin_Controller{
         parent::__construct();     
        
     }
-    public function index(){         
+    public function index(){       
+        $this->data['subview'] = '';
         $this->load->view('admin/_layout_main', $this->data);
     }
     public function modal(){

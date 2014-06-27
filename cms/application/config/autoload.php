@@ -69,7 +69,7 @@ $autoload['libraries'] = array('database',);
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('form','url');
+$autoload['helper'] = array('form','url','cms');
 
 
 /*

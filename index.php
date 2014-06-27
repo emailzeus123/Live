@@ -11,7 +11,7 @@ and open the template in the editor.
     </head>
     <body>
         <?php            
-            header("Location: cms/index.php/page");            
+            header("Location: cms/index.php/admin/user/login");            
         ?>
     </body>
 </html>
